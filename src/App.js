@@ -16,13 +16,15 @@ function App() {
 
   return (
     <div>
+        <LoginPage></LoginPage>
       <h1>Bienvenue chez nous  {prenom}!</h1>
+      <br/>
       <h2>Connectez-vous</h2>
-  <LoginPage></LoginPage>
+
 
       <form>
         <label>
-          <input type="text" name="name" placeholder="Entrer votre prénom..." />
+          <input type="text" name="name" placeholder="Entrer votre prénom..." required />
         </label>
         <input onClick={handleClick} type="submit" value="Accédez à votre espace" />
       </form>
