@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LoginPage from './components/pages/LoginPage';
+import LoginPage from './components/pages/login/LoginPage';
 
 function App() {
 
@@ -17,19 +17,8 @@ function App() {
   return (
     <div>
         <LoginPage></LoginPage>
-      <h1>Bienvenue chez nous  {prenom}!</h1>
-      <br/>
-      <h2>Connectez-vous</h2>
-
-
-      <form>
-        <label>
-          <input type="text" name="name" placeholder="Entrer votre prénom..." required />
-        </label>
-        <input onClick={handleClick} type="submit" value="Accédez à votre espace" />
-      </form>
     </div>
   )
 }
 export default App;
-
+ 
