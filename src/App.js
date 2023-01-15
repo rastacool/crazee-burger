@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import LoginPage from './components/pages/LoginPage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Salut romain
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+  // state (état, donnée)
+  const [prenom, setPrenom] = useState("RASTA")
+  const [count, setCount] = useState(8)
+  // comportements
+
+  const handleClick = () => {
+
+    alert('Please fill in this field.')
+  }
+  //affichage
+
+  return (
+    <div>
+      <h1>Bienvenue chez nous  {prenom}!</h1>
+      <h2>Connectez-vous</h2>
+  <LoginPage></LoginPage>
+
+      <form>
+        <label>
+          <input type="text" name="name" placeholder="Entrer votre prénom..." />
+        </label>
+        <input onClick={handleClick} type="submit" value="Accédez à votre espace" />
+      </form>
+    </div>
+  )
+}
 export default App;
+
