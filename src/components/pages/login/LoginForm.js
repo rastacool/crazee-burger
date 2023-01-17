@@ -7,7 +7,6 @@ export default function LoginForm() {
   //comportements
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`bonjour ${inputValue}`);
     setInputValue("");
   };
 
@@ -16,7 +15,7 @@ export default function LoginForm() {
   };
 
   return (
-    <form action="Submit" onSubmit={handleSubmit}>
+    <form action="Submit" onSubmit={handleSubmit} >
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
