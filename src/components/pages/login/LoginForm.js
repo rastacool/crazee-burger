@@ -22,7 +22,7 @@ export default function LoginForm() {
   return (
     <LoginFormStyled action="Submit" onSubmit={handleSubmit}>
       <h1>
-        CRAZEE <img src="./logo.png" alt="burger-logo" />
+        CRAZEE <img src="/images/logo.png" alt="burger-logo" />
         BURGER{" "}
       </h1>
       <br />
@@ -37,24 +37,17 @@ export default function LoginForm() {
         value={inputValue}
         onChange={handleChange}
         type="text"
-        placeholder="Entrer votre prénom..."
+        placeholder="Entrez votre prénom..."
         required
       />
       </div>
       <br />
-      <button>Accédez à votre espace</button>
+      <button>Accédez à mon espace</button>
     </LoginFormStyled>
   );
 }
 
 const LoginFormStyled = styled.form`
-  background-image: url(burger-background.jpg);
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 
   h1 {
     color: ${theme.colors.primary_burger};
