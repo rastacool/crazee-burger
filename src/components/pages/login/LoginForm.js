@@ -21,10 +21,7 @@ export default function LoginForm() {
   };
   return (
     <LoginFormStyled action="Submit" onSubmit={handleSubmit}>
-      <h1>
-        CRAZEE <img src="/images/logo.png" alt="burger-logo" />
-        BURGER{" "}
-      </h1>
+
       <br />
 
       <h2>
