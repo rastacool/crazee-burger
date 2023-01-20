@@ -1,57 +1,85 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { theme } from "../../../design";
-import { FaBeer } from "react-icons/fa";
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import styled from "styled-components"
+import { IoChevronForward } from "react-icons/io5"
+import { BsPersonCircle } from "react-icons/bs"
+import TextInput from "../../reusable-ui/TextInput"
+import PrimaryButton from "../../reusable-ui/PrimaryButton"
+import { theme } from "../../../theme"
 
 export default function LoginForm() {
-  //state
-  const [inputValue, setInputValue] = useState("");
-  const navigate = useNavigate();
+  // state
+  const [inputValue, setInputValue] = useState("")
+  const navigate = useNavigate()
 
-  //comportements
+  // comportements
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setInputValue("");
-    navigate(`order/${inputValue}`);
-  };
+    console.log("submitted")
+    event.preventDefault()
+    setInputValue("")
+    navigate(`order/${inputValue}`)
+  }
 
   const handleChange = (event) => {
-    setInputValue(event.target.value);
-  };
+    setInputValue(event.target.value)
+  }
+
+  // affichage
   return (
-    <LoginFormStyled action="Submit" onSubmit={handleSubmit}>
-
-      <br />
-
-      <h2>
-
-        CONNECTER-VOUS
-      </h2>
+    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <div>
-      <FaBeer />
-      <input
-        value={inputValue}
-        onChange={handleChange}
-        type="text"
-        placeholder="Entrez votre prénom..."
-        required
-      />
+        <h1>Bienvenue chez nous !</h1>
+        <hr />
+        <h2>Connectez-vous</h2>
       </div>
-      <br />
-      <button>Accédez à mon espace</button>
+      <div>
+        <TextInput
+          value={inputValue}
+          onChange={handleChange}
+          placeholder={"Entrez votre prénom"}
+          required
+          Icon={<BsPersonCircle className="icon" />}
+        />
+
+        <PrimaryButton
+          label={"Accéder à mon espace"}
+          Icon={<IoChevronForward className="icon" />}
+        />
+      </div>
     </LoginFormStyled>
-  );
+  )
 }
 
 const LoginFormStyled = styled.form`
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0px auto;
+  padding: 40px ${theme.spacing.lg};
+  border-radius: ${theme.borderRadius.round};
+  font-family: "Amatic SC", cursive;
+
+  hr {
+    border: 1.5px solid ${theme.colors.loginLine};
+    margin-bottom: ${theme.gridUnit * 5}px;
+  }
 
   h1 {
-    color: ${theme.colors.primary_burger};
-    text-align: center;
-  }
-  h2 {
-    text-align: center;
     color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P5};
   }
-`;
+
+  h2 {
+    margin: 20px 10px 10px;
+    color: ${theme.colors.white};
+    font-size: ${theme.fonts.size.P4};
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fonts.size.P0};
+    margin-left: 10px;
+  }
+`
