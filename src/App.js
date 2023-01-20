@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import OrderPage from './components/pages/order/OrderPage';
 import LoginPage from './components/pages/login/LoginPage';
+import ErrorPage from './components/pages/error/ErrorPage';
 
 function App() {
 
   //affichage
 
   return (
-    <div>
-        <LoginPage></LoginPage>
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/order/:username" element={<OrderPage />} />
+      <Route path="*" element={<ErrorPage />}/>
+    </Routes> 
   )
 }
 export default App;
